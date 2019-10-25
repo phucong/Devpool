@@ -1,0 +1,78 @@
+﻿@model ChessResult.Site.ViewModels.Admin.TournamentDetailViewModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h4>@Model.Tournament.Name</h4>
+    <div class="tournament-info">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>@Html.LabelFor(model => model.Tournament.Organize)</label>
+            </div>
+            <div class="col-sm-8">
+                <label>@Model.Tournament.Organize</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>@Html.LabelFor(model => model.Tournament.TournamentDirector)</label>
+            </div>
+            <div class="col-sm-8">
+                <label>@Model.Tournament.TournamentDirector</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>@Html.LabelFor(model => model.Tournament.Location)</label>
+            </div>
+            <div class="col-sm-8">
+                <label>@Model.Tournament.Location</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>@Html.LabelFor(model => model.Tournament.LastUpdate)</label>
+            </div>
+            <div class="col-sm-8">
+                <label>@Model.Tournament.LastUpdate</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label onchange="GetListTournamentSelection()">@Html.LabelFor(model => model.GroupSelections)</label>
+            </div>
+            <div class="col-sm-8">
+                <select class="custom-select custom-select-sm">
+                    <option value="" disabled selected>Choose your option</option>
+                    @foreach (var item in Model.GroupSelections)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>@Html.LabelFor(model => model.TournamentSelections)</label>
+            </div>
+            <div class="col-sm-8">
+                <select class="custom-select custom-select-sm">
+                    
+                </select>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div>
+
+    </div>
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

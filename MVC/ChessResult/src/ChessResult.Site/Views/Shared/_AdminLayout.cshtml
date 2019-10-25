@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="header-group row align-items-center">
+                <div class="header-cell logo col-md-2">
+                    <a href="#">Chess-result</a>
+                </div>
+                <div class="header-cell sidebar col-md-8">
+                    <nav class="navbar navbar-expand-md justify-content-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                @Html.ActionLink("TOURNAMENT", "index", null, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SEARCH</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-cell login col-md-2 text-right">
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+        
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

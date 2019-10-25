@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions>
+  <Setting Key="Tournament_GetAll" SpName="Tournament_GetAll" DbName="ChessResultDatabase">
+    <Mapping DataField="Id" ObjectProperty="Id" />
+    <Mapping DataField="Name" ObjectProperty="Name" />
+    <Mapping DataField="Organize" ObjectProperty="Organize" />
+    <Mapping DataField="TournamentDirector" ObjectProperty="TournamentDirector" />
+    <Mapping DataField="Location" ObjectProperty="Location" />
+    <Mapping DataField="LastUpdate" ObjectProperty="LastUpdate" />
+    <Mapping DataField="Code" ObjectProperty="FederationCode"/>
+  </Setting>
+  <Setting Key="Tournament_GetById" SpName="Tournament_GetById" DbName="ChessResultDatabase">
+    <!--<Mapping DataField="TournamentId" ObjectProperty="TournamentId"/>-->
+  </Setting>
+</Functions>
