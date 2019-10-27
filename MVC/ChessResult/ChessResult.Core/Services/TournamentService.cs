@@ -33,19 +33,7 @@ namespace ChessResult.Core.Services
 
         public TournamentDetail GetTournamentById(int Id)
         {
-            //var criteria = new GetTournamentByIdCriteria
-            //{
-            //    TournamentId = Id
-            //};
-
-            //var tournament = dynamicRepository.Get<Tournament>(criteria);
-
-            //return tournament;
-
-            var criteria = new GetTournamentByIdCriteria
-            {
-                TournamentId = Id
-            };
+            var criteria = new GetTournamentByIdCriteria(Id);
 
             TournamentDetail tournamentdetail = new TournamentDetail();
             var result = dynamicRepository.FetchMultiple<Tournament, GroupSelection, TournamentSelection>(criteria);

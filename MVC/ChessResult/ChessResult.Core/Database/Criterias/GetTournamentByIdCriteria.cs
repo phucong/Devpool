@@ -9,7 +9,12 @@ namespace ChessResult.Core.Database.Criterias
 {
     class GetTournamentByIdCriteria : CriteriaBase
     {
-        public int TournamentId { get; set; }
+        public GetTournamentByIdCriteria(int Id)
+        {
+            TournamentId = Id;
+        }
+
+        public int TournamentId { get; }
 
         public override string GetSettingKey() => "Tournament_GetById";
 
